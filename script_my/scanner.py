@@ -1,25 +1,9 @@
 import os
 import math
-from turtledemo.penrose import start
-
 from pathlib import Path
 
-if os.name == 'nt':
-    TEMP_DIR = [
-        {
-            "path": Path(os.environ.get('USERPROFILE')) / 'AppData/Local/Temp',
-            "name": "Temp from Appdata",
-        },
-        {
-            "path": "C:/Windows/Temp",
-            "name": "Temp from Windows" #Check careful
-        },
-        {
-            "path": "C:/$Recycle.Bin"
-        }
-    ]
-
 dir_scanned = []
+
 def scanner(start_path):
     path= Path(start_path)
 

@@ -1,3 +1,9 @@
 .venv/
-.idea/
+env/
 __pycache__/
+*.pyc
+build/
+output/
+*.spec
+.idea/
+settings.json
