@@ -190,23 +190,6 @@ def scan_process(path, size):
     root.after(0, finish_scan)
 
 
-# def del_btn_ui():
-#     path = entry_path.get()
-#     size = min_size_entry.get()
-#
-#     if not path or not size:
-#         messagebox.showwarning('Внимание!', "Заполните все поля!")
-#         return
-#
-#     if os.path.isdir(path):
-#         messagebox.askyesno('Подтверждение', f"Вы действительно хотите удалить файлы в {path}")
-#         return True
-#     else:
-#         messagebox.showerror('Ошибка!', 'Такой папки не существует!')
-#
-#     entry_path.delete(0, tk.END)
-#     min_size_entry.delete(0, tk.END)
-
 def scan_btn_ui():
     path = entry_path.get()
     entry_size = min_size_entry.get()
@@ -249,12 +232,11 @@ def scan_btn_ui():
     min_size_entry.delete(0, tk.END)
 
 def show_file_in_explorer_ui(target_path):
-    success,error_text = show_file_in_explorer(target_path)
+    success = show_file_in_explorer(target_path)
 
     if not success:
-        messagebox.showerror("Ошибка", f"Не удалось открыть проводник:\n{error_text}")
-    else:
-        show_file_in_explorer(target_path)
+        messagebox.showerror("Ошибка", f"Не удалось открыть проводник!")
+
 
 def s3nd2trash_ui(target_path, target_frame):
     confirm = messagebox.askyesno(
